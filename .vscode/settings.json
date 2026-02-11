@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.jss": "javascript",
+    "*.jsm": "javascript",
+    "*.jsh": "javascript"
+  }
+}
