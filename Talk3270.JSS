@@ -1,3 +1,5 @@
+
+; cfd made changes Feb 11 2026
 ;Scripts for 3270 terminal emulator
 Const cT3Ver="3.7.1 Build 20250523"
 ;
@@ -58,7 +60,7 @@ Function AutoStartEvent ()
 		nLogging = IniReadInteger (cAdmin, cLogKey,  0, sAdmFile)
 		;	v3.7.1 see if logging  should be used
 		if nLogging > 0 then
-			;	set logging  in Admin.INI file to 0 so it won't start the next time
+			;	set logging  in Admin.INI file to 0 so it wont start the next time
 			IniWriteInteger (cAdmin, cLogKey, 0, sAdmFile,True)
 			utillogToggle(nLogging)
 			utilLogWrite("AutoStartEvent Logging Started by Admin INI file inside FirstTime ############## " )
