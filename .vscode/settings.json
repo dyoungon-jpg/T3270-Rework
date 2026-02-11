@@ -3,5 +3,7 @@
     "*.jss": "javascript",
     "*.jsm": "javascript",
     "*.jsh": "javascript"
-  }
+  },
+  "javascript.validate.enable": false,
+  "java.enabled": false
 }

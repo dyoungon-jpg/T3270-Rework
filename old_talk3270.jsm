@@ -1,11 +1,23 @@
-;****************************************************************************
-; talk3270.JSH 
-; Message file for Talk3270.jss
-; File name talk3270.jsm 
-; ****************************** Revision log *******************************
-; updated       Description of change
-; 2026-02-11 - removed unsed const & vars 
-;****************************************************************************
+;Message file  for talk3270
+;
+;	File Name : TALK3270.JSM
+;***************************************************************************************
+;
+; ****************************** Revision log **************************************
+; cfd 10/29/05    1.0    Created Initial Version 1.0
+; cfd 04/15/09             added column msgs and Admin file 
+; cfd 10/10/09             Added messages for Default and terminal Attributes
+;                                 Corrected spelling 
+; cfd  11-05-25 - added help for copy line and copy selected text 
+; cfd  2014-07-27 - Add vars for last modifyed date handling
+; cfd  2016-06-18 - added msg for admin ini errors 
+; cfd 2017-10-13 - added new hotkeys for menu 
+; cfd 2021-07-06 - added msgSI25 for jaws setting display 
+;                        msgSI26 for running JAWS serial no
+; cfd 2022-02-06 - removed help messages to new talk3270help.jsm
+;                        Created help files .jsm one for BNS and one standard 
+;                        BNS has additional hotkeys 
+; ****************************** Revision log **************************************
 CONST
 ; Global Messages 
 msgCloseWindow="Press Escape to close this window.",
@@ -89,6 +101,35 @@ so you can paste it into Word or NotePad for a more detailed review
 Press Escape to close this window " + cScBufferNewLine.
 
 Press ESCAPE to exit the help window.
+@@
+
+@msgAuthErr
+The talk3270 speech scripts are not authorized for JAWS Serial Number : 
+
+@@
+ @msgAuthTP
+						The Talk3270 Scripts will expire and stop working  on  - 
+@@
+
+
+@msgAuthX
+
+            The talk3270 Speech Scripts demo mode has ended!!
+
+@@
+
+@msgAuthErrTS
+
+		>>>> The Talk3270 Scripts are running in Demo mode <<<<
+
+@@
+
+@msgSudata
+For Technical help Contact:
+       SuData Consulting
+       Tel: (416)696-9590
+       Mobile: (416)419-1416
+       Email: sudata@rogers.com 
 @@
 
 EndMessages
