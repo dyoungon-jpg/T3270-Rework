@@ -13,7 +13,7 @@ Const cT3Ver="3.7.1 Build 20250523"
 ;				  error when saving. Press Ctrl+Z twice then press Ctrl+S to save and
 ;				  compile. The changes to the Script Information will be retained.
 ;				  Repeat for other compile errors due to Script Information changes.
-;
+; Tested with Talk3270 v3.7.1 Build 20250523
 ;
 ;*********************************** version and Build **************************************
 ;
