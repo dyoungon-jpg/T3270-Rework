@@ -1,5 +1,4 @@
 
-; cfd made changes Feb 11 2026
 ;Scripts for 3270 terminal emulator
 Const cT3Ver="3.7.1 Build 20250523"
 ;
