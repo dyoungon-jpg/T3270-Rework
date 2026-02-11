@@ -13,7 +13,6 @@ Const cT3Ver="3.7.1 Build 20250523"
 ;				  error when saving. Press Ctrl+Z twice then press Ctrl+S to save and
 ;				  compile. The changes to the Script Information will be retained.
 ;				  Repeat for other compile errors due to Script Information changes.
-;	2026-2-06 DY: Connected GitHub repo to VS Code.
 ;
 ;*********************************** version and Build **************************************
 ;
@@ -346,7 +345,7 @@ EndFunction
 ;**********************************************************************
 ; 	Get the name of the screen being displayed
 ;	2010-08-15 - Added cmd to clear clipboard on new screen
-;			   - Corrected bug "if ScreenAttribError' removed not "!"
+;			   - Corrected bug "if ScreenAttribError' removed not "!""
 ;**********************************************************************
 String Function GetScreenId ()
 	var string lScrnName,
