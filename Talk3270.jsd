@@ -1,0 +1,310 @@
+:function AutoStartEvent
+:SearchRank 1
+
+:function AddTextToBuffer
+:SearchRank 1
+:Synopsis Add text to the SbufferText Variable
+:Category Application
+:Param string/pText No Description
+:Param string/pAddLF No Description
+
+:function AutoReadTrigger
+:SearchRank 1
+:Synopsis use to schedule a auto read by the internal schedule
+:Category Application
+
+:function AutoReadNewText
+:SearchRank 1
+:Synopsis Re-speaks all automatically  read data
+:Description Re speaks all the data from the current screen that normally was spoken automatically when the screen is first display. If this command is pressed twice in quick sequence then the information will be placed in the virtual viewer.
+:Category Application
+:Param int/pAutoRead No Description
+
+:function GetCurrentPosition
+:Returns string Returns asetmented string containing
+:SearchRank 1
+:Synopsis get the current location of the active cursor
+:Category Application
+
+:function GetScreenFields
+:SearchRank 1
+:Synopsis Retreive predefined fields from the screen
+:Category Application
+
+:function GetScreenFieldData
+:Returns string t
+:SearchRank 1
+:Synopsis Get the actual data from the screen
+:Category Application
+:Param string/pFieldString No Description
+
+:function GetScreenId
+:Returns string Screen ID
+:SearchRank 1
+:Synopsis Get the screen id of the current displayed screen
+
+:function GetScreenMessage
+:Returns string No Return Description
+:SearchRank 1
+:Synopsis retreive the current screen message line
+:Category Application
+
+:function GetScreenPageNumber
+:Returns string Page or Screen number
+:SearchRank 1
+:Synopsis retreives the page or Screen number
+:Category Application
+
+:function GetScreenTitle
+:Returns string Title of the Screen
+:SearchRank 1
+:Synopsis Get Title from Screen
+:Description Retreives the Title text from a screen
+:Category Application abc
+
+:function GetTabField
+:Returns string Label and fields data
+:SearchRank 1
+:Synopsis Get tab Field data
+:Category Application
+:Param string/pKey No Description
+
+:function GetTextFromScreen
+:Returns string returns a string of text from the sFullScreenImage variable
+:SearchRank 1
+:Synopsis Retreives a text element from the sFullScreenimage variable
+:Description returns cfd the text located at a given line  and column for a specified length test 1
+:Param int/pLineNumber No Description
+:Param int/pCol No Description
+:Param int/pLen No Description
+
+:function Is3270ScreenFocus
+:Returns int Returns true or false
+:SearchRank 1
+:Synopsis is the 3270 main edit screen in current focus
+:Description returns true if the 3270 screen is in focus else returns false
+
+:function KeyPressedEvent
+:SearchRank 1
+:Param int/nKey No Description
+:Param string/strKeyName No Description
+:Param int/nIsBrailleKey No Description
+:Param int/nIsScriptKey No Description
+
+:function LocateText
+:Returns int No Return Description
+:SearchRank 1
+:Synopsis Locate text on the screen
+:Description finds text within the sFullScreen area if the text is found then the line number of the screen which contains the text is returned
+:Param string/pText No Description
+
+:function MoveToLine
+:Returns string No Return Description
+:SearchRank 1
+:Synopsis Move the active cursor to line on the screen based on the key pressed
+:Description Move the active cursor to any line of the active screen based on the letter that is pressed. Pressing Control+shift+a will move the cursor to line 1 while pressing Control+shift+X will move the cursor to line 24. In other words the lines are referenced by letters instead of line numbers. Example; a is line1, b is line2, c is line3 and so on...
+:Category Application
+
+:script SayPriorWord
+:SearchRank 1
+:Synopsis Moves the cursor to the  Prior word and speaks it
+:Description Move the active cursor to the prior word and speakes the text at the cursor location. This command will move the active cursor one word at a time.
+:Category Application
+
+:script SayNextWord
+:SearchRank 1
+:Synopsis Move  to the next word and speaks it
+:Description Move the active cursor to the next word and speakes the text at the cursor location. This command will move the active cursor one word at a time.
+:Category Application
+
+:function ScreenStabilizedEvent
+:SearchRank 1
+:Param handle/hwndLastScreenWrite No Description
+
+:function RefreshScreenImage
+:SearchRank 1
+:Synopsis grabs the full 3270 windowinto sFullScreen var for processing
+:Description Captures all the text from the 3270 screen and places it in the sFullScreenImage variable
+:Category Application
+
+:function ScreenAttribError
+:SearchRank 1
+:Synopsis are all screen attributes greater then zero
+:Description Check screen top, bottom, left, CharWidh, LineHeight to make sure they are greater then zero
+:Category Application
+
+:function utilGetSreenProperties
+:SearchRank 1
+:Synopsis gets the line height and character width for this session
+:Description Determines the line height and character width for this work station. This function is very key to the entire program working correctly as most other routines rely on the global variables that are set by this routine. The global variables are: nTopOfScreen - the actual starting location of the 3270 display in pixels from the top of the full windows screen nLeftMargin - - the actual starting location of the 3270 display in pixels from the left of the full windows screen nCharWidth - the width of character on the 3270 screen in pixels nLineHeight - the actual height of a line on the 3270 screen in pixels
+
+:script UtilGetScreenInfo
+:Returns string screen information
+:SearchRank 1
+:Synopsis Talk3270 Status Screen
+:Description Pressing this key combination will gather the current 327x/5150 screen status as it relates to Talk3270.  The status display includes the following information License To: – Your company name License No: - Talk3270 License Number Terminal Screen Attributes: Application	Name of the terminal emulator program you are using e.g. PCSWS Real WinClass	Real window class of the terminal emulator INI WinClass	Window class as defined to the Talk3270 Screen Name	The Screen ID of the current screen Screen Title	Title of the current screen Screen Delay	Number of milli-seconds (ms) to wait after screen refresh  AutoRead Delay	Number of milli-seconds (ms) to wait before doing auto-read Top of screen	Vertical location in pixels of the actual top of terminal window Left Margin	Horizontal location in pixels of the actual left margin of  the terminal window Line height	Number of pixels per line of text Char Width	Number of Pixels per character with PC Cursor is at	Actual position of the PC cursor by Row and Column JAWS Cursor is at	Actual position of the JAWS cursor by Row and Column
+:Category Application
+
+:function UtilBuildHotkeys
+:SearchRank 1
+:Synopsis Check hot-keys for Talk3270
+:Description Check to see if the hot keys are setup correctly for the Talk3270 Scripts. If not the keys are rebuilt.
+:Category Application
+
+:function UtilAddHotKey
+:SearchRank 1
+:Synopsis Dos the actual reading of the JKM file
+:Description Read the JKM file and makes sure the keys are present and not attached to a Frame.
+:Category Application
+:Param string/pKey No Description
+:Param string/pScriptName No Description
+
+:function ProcessColumns
+:SearchRank 1
+:Category Application
+:Param string/pMove No Description
+
+:function utilLogToggle
+:SearchRank 1
+:Param int/pnLogging No Description
+
+:function utilLogWrite
+:SearchRank 1
+:Param string/psMSG No Description
+
+:script CopyField3270
+:SearchRank 1
+:Synopsis Copy the Text at the cursor to the clip board
+:Description When the Talk3270 copy key Windows+C is press the current field from the 3270 screen is copied to the clip board. This is very useful for copping long account numbers etc. The item which is copied is all text at the PC cursor location delimited by spaces.
+
+:script CopyLine3270
+:SearchRank 1
+:Synopsis Copies line at the cursor to the clipboard
+:Description When the Talk3270 copy line key Control+ Windows+C is press the current line from the 3270 screen is copied to the clip board.
+:Category Application
+
+:script CopySelected3270
+:SearchRank 1
+:Synopsis Copy already selected text from the 3270 screen
+:Description When the Talk3270 copy selected text key Control+ Windows+C is press the already selected text on the 3270 screen is copied to the clip board.
+
+:script PasteField3270
+:SearchRank 1
+:Synopsis Paste data from the clip board to the terminal screen
+:Description When the Talk3270 paste key is pressed text from the clip board is pasted into the terminal screen. Note: The Talk3270 paste key is will also paste text from the screen if the screen definition include the auto copy to clip board feature for any of the fields which have been defined to the screen.
+
+:script VerifyHotKeys
+:SearchRank 1
+:Synopsis Re-build Talk3270 speech hotkeys.
+:Description Make sure the required JAWS ; hotkeys are present in the file. If they are not then the ; keys are added to the JKM file.  The viewer will pop up ; showing all changes.
+:Category Application
+
+:script SayScreenFields
+:SearchRank 1
+:Synopsis says predefined fields on the screen
+:Description Depending on the particular screen currently being displayed, this key Slash) command will read specific relevant data from the screen. The particular data being spoken has been predetermined by the tech-services staff. Your technical support and/or management staff has the ability to modify the selected data being spoken allowing additions or deletions as required. Double clicking or quickly pressing this key combination twice will place the predefined data in the virtual viewer. The virtual viewer is a pop-up dedicated window, which allows the speech-user to use the cursor keys to scroll through the predefined data thus providing them the ability to examine the data in greater detail. This is beneficial to both the speech and Braille users
+:Category Application
+
+:script ViewScreenFields
+:SearchRank 1
+:Synopsis Places Predefined fields from the current screen into the virtual viewer
+:Description Places predefined fields  from the current screen into the JAWS virtual viewer. The order of the fields in the virtual viewer have benn  predetermined
+
+:script SayScreenPageNumber
+:SearchRank 1
+:Synopsis Say the current screen page or screen number
+:Description Some screens contain more than one page or screen of data. This key speaks the number of the current screen. For example, “Screen 1 of 3”. If there is no screen or page number on the current displayed screen then nothing is spoken. Double clicking or quickly pressing this key combination twice will place the screen or page number in the virtual viewer. Note: If JAWS verbosity is set beginner this information is spoken automatically.
+:Category Application
+
+:script SayAutoReadText
+:SearchRank 1
+:Synopsis Re-speaks all automatically  read data
+:Description This key will repeat all text for a given screen that has been defined as “Auto-Read”. Auto-read text is data which has been predefined to Talk3270 to be automatically spoken when the screen is initially activated. Double clicking or quickly pressing this key combination twice places the predefined Auto-Read data in the virtual viewer.\
+:Category Application
+
+:script TabForwardSpeak
+:SearchRank 1
+:Synopsis Moves the PC cursor and speaks the field and label as you tab
+:Description When the tab key is pressed the field data where the cursor is move will be spoken, along with the label data immediately to the left of the cursor
+:Category Application
+
+:script TabBackSpeak
+:SearchRank 1
+:Synopsis move the pc cursort to the prior tab field and Speaks the Label and Field data
+:Description When the back-tab key is pressed the field data where the cursor move will be spoken, along with the label data immediately to the left of the cursor.
+
+:script SayTabField
+:SearchRank 1
+:Synopsis Says the  Label and field data for the current currsor position
+:Description Speaks the current field and speaks both the label and data within the fields. This permits the speech-user to hear the field data with out moving the cursor key or pressing the tab or Back-Tab keys. Like the Tab and Back-Tab key this function works best on screens which support tabbing.
+:Category Application
+
+:script SayCurrentPosition
+:SearchRank 1
+:Synopsis says the column and row of the active cursor
+:Description Speak the line and column where the cursor is currently located. This command is intended to be an orientation aid to the speech-user by presenting the cursor location in terms of line and column where the cursor is currently located. By double clicking or quickly pressing this key combination twice the information will be placed in the virtual viewer.
+:Category Application
+
+:script MoveCursorToRow
+:SearchRank 1
+:Synopsis Move the active cursor to line on the screen based on the key pressed
+:Description Move the active cursor to any line of the active screen based on the letter that is pressed. Pressing Windows+shift+a will move the cursor to line 1 while pressing Windows+shift+X will move the cursor to line 24. In other words the lines are referenced by letters instead of line numbers. Example; a is line1, b is line2, c is line3 and so on... By double clicking or quickly pressing this key combination twice the information from the line will be placed in the virtual viewer.
+:Category Positioning
+
+:script SayScreenTitleAndMessage
+:SearchRank 1
+:Synopsis says the current screen title and any message on the bottom of the screen
+:Description Speakes the title at the top of the current screen and says any status or system messages that are defined to the current screen. Messages are generally located near the bottom of the screen. By double clicking or quickly pressing this key combination twice the information will be placed in the virtual viewer.r.
+
+:script SayHelpKeys
+:SearchRank 1
+:Synopsis Says Talk3270's speech access  hot keys that are used for reading the terminal screen
+:Description Provides a list of all speech hot keys for talk3270. The list of keys are placed into the JAWS virtual viewer for easy reading.   test
+
+:script NextColumn
+:SearchRank 1
+:Synopsis Moves to the Next Column
+:Description move to the next column defined for a given screen.
+:Category Application
+
+:script PreviousColumn
+:SearchRank 1
+:Synopsis Move to Previous Column
+:Description move to the previous column defined for a given screen.
+:Category Application
+
+:script SayNextLineInColumn
+:SearchRank 1
+:Synopsis Moves to the next line in a column and speaks it.
+:Description Move to next line in the colllumn and reads the line in a defined column on the screen.
+:Category Application
+
+:script SayPreviousLineInColumn
+:SearchRank 1
+:Synopsis Moves to the prior line in the Column
+:Description Move to the prior line in a column and Reads a defined column on the screen.
+:Category Application
+
+:script MoveToTopOfColumn
+:SearchRank 1
+:Synopsis Move to the top Column
+:Description Move to the first line of the current column and speaks it. By double clicking or quickly pressing this key combination twice the entire column will be placed in the virtual viewer.
+:Category Application
+
+:script MoveToBottomOfColumn
+:SearchRank 1
+:Synopsis Move to the last entery in the current column
+:Description Move to the last entry in the column and speaks it. By double clicking or quickly pressing this key combination twice the entire column will be placed in the virtual viewer.
+:Category Application
+
+:script ShowMenu
+:SearchRank 1
+:Synopsis Display Talk3270 menu
+:Description Provides a list of commonly used Talk3270 function in a menu list
+:Category Application
+
+:script LoggingSelect
+:SearchRank 1
+:Synopsis Start or stop Talk3270 logging
+:Category Application
+

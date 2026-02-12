@@ -31,7 +31,7 @@ include "Talk3270Exit.jss" ; Generic stub exit routines
 ;****************************************************************************
 ;Setup screen locate vars and
 ;****************************************************************************
-Function AutoStartEvent ()
+void Function AutoStartEvent ()
 	var string lText,
 	string lKey,
 	string slPerGoal,
@@ -119,7 +119,7 @@ Void Function AddTextToBuffer (string pText, string pAddLF)
 	endif
 EndFunction
 
-Function AutoReadTrigger ()
+void Function AutoReadTrigger ()
 	if nDoAutoRead then
 		AutoReadNewText (True)
 	endif
@@ -255,7 +255,7 @@ EndFunction
 ;****************************************************************************
 ;	Retrieve predefined fields from the screen
 ;****************************************************************************
-Function GetScreenFields ()
+void Function GetScreenFields ()
 	var string lFldString,
 	string lFieldList,
 	string lFieldKey,
@@ -632,37 +632,12 @@ EndFunction
 ;	Find any text within the full virtual screen and pass
 ;	back the line number which contains the text
 ;**********************************************************************
-Function LocateText (string pText)
+Int Function LocateText (string pText)
 	var int lLinePTR
 	lLinePTR = StringSegmentIndex (sFullScreen ,cLF, pText)
 
 	if nLogging == 3 then
 		utilLogWrite("LocateText - ScrnId:" +  sScreenID + " Locate:" + pText + " LinePtr:" + IntToString(lLinePTR))
-	endif
-	return lLinePTR
-EndFunction
-
-;**********************************************************************
-;	Find any text within a restricted area of the virtual screen
-;	and pass back the line number which contins the text
-;**********************************************************************
-Function LocateTextRestricted (int pStartLine, int pEndLine, string pText)
-	var int lLinePTR,
-	int lNdx,
-	string lText
-	lNdx = pStartLine
-	While (lNdx <= pEndLine)
-		lText = StringSegment(sFullScreen, cLF, lNdx)
-		if StringContains(lText, pText) then
-			lLinePTR = lNdx
-			lNdx = 99
-		else
-			lNdx = lNdx+ 1
-		endif
-	endwhile
-	
-	if nLogging then
-		utilLogWrite("LocateTextRestricted - ScrnId:" +  sScreenID + " Pointer:" + IntToString (lLinePTR))
 	endif
 	return lLinePTR
 EndFunction
@@ -784,7 +759,7 @@ EndFunction
 ;	2025-05-17 - Function RefreshScreenImage GetTextInRect change attribute flag from 1 to 0,
 ;				 new 9th parm COORDSYS_xx that must be set
 ;****************************************************************************
-Function RefreshScreenImage ()
+void Function RefreshScreenImage ()
 	var	int lRight,
 		int lBottom
 		
@@ -819,7 +794,7 @@ EndFunction
 ;	Check screen top, bottom, left, CharWidh, LineHeight to make
 ;	sure they are greater than zero
 ;*******************************************************************************
-Function ScreenAttribError ()
+void Function ScreenAttribError ()
 	var int nScreenError
 	if  nTopOfScreen <= 0 then
 		nScreenError = true
@@ -852,7 +827,7 @@ EndFunction
 ;			   2. Force reading attribs from INI if using in test mode
 ;				  i.e. PsPad, Notepad, etc
 ;****************************************************************************
-Function utilGetSreenProperties ()
+void Function utilGetSreenProperties ()
 	var int llineTop,
 	int llineBottom,
 	int nBottomOfScreen,
@@ -1049,7 +1024,9 @@ Script UtilGetScreenInfo ()
 	;	added for info box to display date 
 	msgsI30 + SysGetDate ("yyyy-MMM-dd") + cBlank + SysGetTime ("hh:mm tt")
 	SpeechOn(True)
-	ExMessageBox (lScreenInfo, sAdminCompName + " - " + msgTalk3270, mb_DefButton1)
+	UserBufferClear ()
+	UserBufferAddText (lScreenInfo)
+	UserBufferActivate (False)
 EndScript
 
 ;***************************************************************************
@@ -1210,7 +1187,7 @@ EndFunction
 ;	are present. If not defined then adde key and script
 ;	capture any key conflict where key was attached to a frame.
 ;***************************************************************************
-Function UtilAddHotKey (string pKey, string pScriptName)
+void Function UtilAddHotKey (string pKey, string pScriptName)
 	var string lReturnText,
 	int lFrameFound
 	lFrameFound = false
@@ -1237,7 +1214,7 @@ EndFunction
 ;	All column processing is handeled by this function including
 ;	both moving and reading
 ;***************************************************************************
-Function ProcessColumns (string pMove)
+void Function ProcessColumns (string pMove)
 	var string lColString,
 	string lsColKey,
 	string lsColData,
@@ -1344,7 +1321,7 @@ EndFunction
 ;***************************************************************************
 ;	Start Stop logging 
 ;***************************************************************************
-Function utilLogToggle (int pnLogging)
+void Function utilLogToggle (int pnLogging)
 	var string sLogStamp,
 		string lText,
 		string lMsg,
@@ -1401,7 +1378,7 @@ EndFunction
 ;***************************************************************************
 ;	Write out log data
 ;***************************************************************************
-Function utilLogWrite (string psMSG)
+void Function utilLogWrite (string psMSG)
 	var string sLogStamp
 		
 	;	need to add counter in fromt of time as time won't be unique
