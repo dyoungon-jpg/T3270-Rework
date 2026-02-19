@@ -1,11 +1,11 @@
-;	File Name : TALK3270Helpbns.jsm
+;	File Name : ltrOneHelpbns.jsm
 ;***************************************************************************************
 ; cfd 2022-02-06 - Created help files .jsm one for BNS and one standard 
 ;                        BNS has additional hotkeys 
 ;***************************************************************************************
 Messages
-@msgTalk3270Help
-                Talk3270 Hot Keys
+@msgltrOneHelp
+                ltrOne Hot Keys
  
 If any of the Following reading keys are pressed twice quickly the information 
         will be placed in the virtual viewer for ease of reading. 
@@ -47,9 +47,9 @@ Alt+Control+Home Move to First line in current column. If pressed twice
 Alt+Control+End Move to last line in current column. If pressed twice 
 	    the entire Column is placed in the virtual viewer. 
 
-						Talk3270 specific Keys 
-Alt+Control+K Rebuilds the Talk3270 Hotkeys 
-Windows+ALT+S Display Talk3270 Information. 
-` (Grave Accent Key) Show Menu of talk3270  hotkeys 
+						ltrOne specific Keys 
+Alt+Control+K Rebuilds the ltrOne Hotkeys 
+Windows+ALT+S Display ltrOne Information. 
+` (Grave Accent Key) Show Menu of ltrOne  hotkeys 
 @@ 
 EndMessages
