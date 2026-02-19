@@ -1,0 +1,35 @@
+:script bnsProcessAuthenticationScreens
+:SearchRank 1
+:Synopsis Move the cursor on the Authentication Screens 
+:Description Moves the cursor on the Authentication Screens up or down through the list of items. To check any item use the space bar.
+When at the bottom of the list and down is press the cursor will move back to the top of the list. Pressing the up arrow when at the top of the list will move to the bottom of the list 
+
+
+
+:script AggPopup
+:SearchRank 1
+
+:script AbmPopup
+:SearchRank 1
+
+:script POSPopup
+:SearchRank 1
+
+:script CountryCodePopup
+:SearchRank 1
+
+:script ProvPopup
+:SearchRank 1
+
+:function exitAutoReadNewText
+:SearchRank 1
+
+:function exitVerifyHotKeys
+:SearchRank 1
+
+:function exitGetScreenFields
+:SearchRank 1
+
+:function BNSvsSayPlastics
+:SearchRank 1
+

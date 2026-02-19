@@ -1,23 +1,11 @@
-;Message file  for talk3270
-;
-;	File Name : TALK3270.JSM
-;***************************************************************************************
-;
-; ****************************** Revision log **************************************
-; cfd 10/29/05    1.0    Created Initial Version 1.0
-; cfd 04/15/09             added column msgs and Admin file 
-; cfd 10/10/09             Added messages for Default and terminal Attributes
-;                                 Corrected spelling 
-; cfd  11-05-25 - added help for copy line and copy selected text 
-; cfd  2014-07-27 - Add vars for last modifyed date handling
-; cfd  2016-06-18 - added msg for admin ini errors 
-; cfd 2017-10-13 - added new hotkeys for menu 
-; cfd 2021-07-06 - added msgSI25 for jaws setting display 
-;                        msgSI26 for running JAWS serial no
-; cfd 2022-02-06 - removed help messages to new talk3270help.jsm
-;                        Created help files .jsm one for BNS and one standard 
-;                        BNS has additional hotkeys 
-; ****************************** Revision log **************************************
+;****************************************************************************
+; ltrOne.JSH 
+; Message file for ltrOne.jss
+; File name ltrOne.jsm 
+; ****************************** Revision log *******************************
+; updated       Description of change
+; 2026-02-11 - removed unsed const & vars 
+;****************************************************************************
 CONST
 ; Global Messages 
 msgCloseWindow="Press Escape to close this window.",
@@ -26,13 +14,13 @@ msgWinClassErr=" <-- ERROR WinClass Do Not Match",
 msgErrorChanges=" Frames will require updating",
 msgAuth="  Authorized ",
 msgAuthErrHd="  *** Authorization Error ***" ,
-msgAuth1="Talk3270 is NOT authorized for the current JAWS Serial Number!",
-msgAuth2="The Talk3270 Speech Scripts are licensed to : ",
+msgAuth1="ltrOne is NOT authorized for the current JAWS Serial Number!",
+msgAuth2="The ltrOne Speech Scripts are licensed to : ",
 msgAuth2a=" For JAWS S/N : ",
 msgAuth3="This PC is running JAWS S/N: ",
 msgAuth4="S/N Authenticated: ",
-msgTalk3270="Talk3270 Speech Scripts",
-msgKeyUpdatedOk="Talk3270 hot keys updated Successfully!",
+msgltrOne="ltrOne Speech Scripts",
+msgKeyUpdatedOk="ltrOne hot keys updated Successfully!",
 msgSI1 = "           License To: ",
 msgSI2 = "           License No: ",
 msgSI3 = "                Terminal Screen Attributes :",
@@ -49,13 +37,13 @@ msgSI13 = "        Line Height = ",
 msgSI14 = "       Char Width = ",
 msgSI15 = "         PC Cursor:",
 msgSI16 = "       JAWS Cursor:", 
-msgSI17 = "*** Using default Attributes From Talk3270Admin.INI ***",
+msgSI17 = "*** Using default Attributes From ltrOneAdmin.INI ***",
 msgSI18 = "     Using Terminal Attributes",
 msgSI20 = " INI files last modified  ",
 msgSI21 = "	Screens - ",
 msgSI22 = "	Fields - ",
 msgSI23 = "	Columns - ",
-msgSI24 = "Error Talk3270Admin.in file is missing or has invalid data",
+msgSI24 = "Error ltrOneAdmin.in file is missing or has invalid data",
 msgSI25 = "JAWS setting Directory = ..",
 MSGSI26 = "            Running JAWS Serial # : ",
 msgsI27 = "column ",
@@ -73,7 +61,7 @@ msgDataCopied = "Copied ",
 msgNoDataCopied = "No data copied",
 msgNoClipboard = "No data on Clipboard",
 msgDataPasted = "Pasting ", 
-msgPleaseWait="Verifying Talk3270 Hot Keys, Please wait!",
+msgPleaseWait="Verifying ltrOne Hot Keys, Please wait!",
 msgKeyUpdated="HotKeys updated Successfully!",
 msgHotKeysOK="Hot Keys OK"
 
@@ -84,7 +72,7 @@ Messages
  IMPORTANT Notice Please Read
 
 The following Frames had key assignments that are used by the
-Talk3270 Script and have been removed, so therefore will no 
+ltrOne Script and have been removed, so therefore will no 
 longer work. You must use the frame manager to add new 
 Hot Keys to these frames.
 
@@ -101,35 +89,6 @@ so you can paste it into Word or NotePad for a more detailed review
 Press Escape to close this window " + cScBufferNewLine.
 
 Press ESCAPE to exit the help window.
-@@
-
-@msgAuthErr
-The talk3270 speech scripts are not authorized for JAWS Serial Number : 
-
-@@
- @msgAuthTP
-						The Talk3270 Scripts will expire and stop working  on  - 
-@@
-
-
-@msgAuthX
-
-            The talk3270 Speech Scripts demo mode has ended!!
-
-@@
-
-@msgAuthErrTS
-
-		>>>> The Talk3270 Scripts are running in Demo mode <<<<
-
-@@
-
-@msgSudata
-For Technical help Contact:
-       SuData Consulting
-       Tel: (416)696-9590
-       Mobile: (416)419-1416
-       Email: sudata@rogers.com 
 @@
 
 EndMessages
